@@ -1130,13 +1130,13 @@ func (i *K8sInstaller) OnDemandRunnerConfig() *pb.OnDemandRunnerConfig {
 		cpuRequest := k8s.ResourceConfig{
 			Requested: v,
 		}
-		cfgMap["cpu_request"] = cpuRequest
+		cfgMap["cpu"] = cpuRequest
 	}
 	if v := i.config.memRequest; v != "" {
 		memRequest := k8s.ResourceConfig{
 			Requested: v,
 		}
-		cfgMap["mem_request"] = memRequest
+		cfgMap["memory"] = memRequest
 	}
 
 	// Marshal our config

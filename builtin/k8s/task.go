@@ -66,10 +66,10 @@ type TaskLauncherConfig struct {
 	Namespace string `hcl:"namespace,optional"`
 
 	// Optionally define various cpu resource limits and requests for kubernetes pod containers
-	CPU *ResourceConfig `hcl:"cpu,block"`
+	CPU *ResourceConfig `hcl:"cpu,block,optional"`
 
 	// Optionally define various memory resource limits and requests for kubernetes pod containers
-	Memory *ResourceConfig `hcl:"memory,block"`
+	Memory *ResourceConfig `hcl:"memory,block,optional"`
 }
 
 func (p *TaskLauncher) Documentation() (*docs.Documentation, error) {

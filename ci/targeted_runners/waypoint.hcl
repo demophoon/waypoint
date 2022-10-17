@@ -20,7 +20,7 @@ app "targeted_runners" {
 
   deploy {
     use "docker" {
-      command = ["sleep", "infinite"]
+      command = ["sleep", "infinity"]
     }
   }
 }

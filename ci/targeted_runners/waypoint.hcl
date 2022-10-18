@@ -12,15 +12,20 @@ runner {
 app "targeted_runners" {
   build {
     use "docker-pull" {
-      image = "alpine"
+      image = "nginx"
       tag = "latest"
-      disable_entrypoint = true
+    }
+    registry {
+      use "docker" {
+        image = "localhost:5000/nginx"
+        tag   = "latest"
+      }
     }
   }
 
   deploy {
     use "docker" {
-      command = ["sleep", "infinity"]
+      service_port = 80
     }
   }
 }

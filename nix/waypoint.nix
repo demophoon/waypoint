@@ -14,7 +14,7 @@
 , go-protobuf-grpc-gateway
 , go-protobuf-json
 , go-protobuf-swagger
-, go-tools
+, gotools
 , grpcurl
 , kubectl
 , libpng
@@ -46,6 +46,8 @@ mkShell rec {
     protoc-gen-grpc-web
     yarn
 
+    gotools
+
     # Custom packages, added to overlay
     protobufPin
     go-protobuf
@@ -53,7 +55,6 @@ mkShell rec {
     go-protobuf-grpc-gateway
     go-protobuf-json
     go-protobuf-swagger
-    go-tools
     go-mockery
     go-changelog
 
